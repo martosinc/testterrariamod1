@@ -19,8 +19,8 @@ namespace PlazmaMode.Items.Instruments
             item.melee = true;
             item.width = 40;
             item.height = 40;
-            item.useTime = 50;
-            item.useAnimation = 10;
+            item.useTime = 14;
+            item.useAnimation = 30;
             item.pick = 110;
             item.useStyle = 1;
             item.knockBack = 20;
