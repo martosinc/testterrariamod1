@@ -14,6 +14,7 @@ namespace PlazmaMode.Tiles
             Main.tileMergeDirt[Type] = true; // Will tile merge with dirt?
             Main.tileLighted[Type] = true; // ???
             Main.tileBlockLight[Type] = true; // Emits Light
+            Main.tileSpelunker[Type] = true;
             
             drop = mod.ItemType("PlazmaOre"); // What item drops after destorying the tile
             ModTranslation name = CreateMapEntryName();

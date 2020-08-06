@@ -18,7 +18,8 @@ namespace PlazmaMode.Projectiles
             projectile.aiStyle = 0; //projectile moves in a straight line
             projectile.friendly  = true; //player projectile
             projectile.timeLeft = 1200; //lasts for 600 frames/ticks. Terraria runs at 60FPS, so it lasts 10 seconds.
-            projectile.melee = true;
+            // projectile.melee = true;
+
         }
 
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
@@ -29,9 +30,6 @@ namespace PlazmaMode.Projectiles
         {
             projectile.rotation = projectile.velocity.ToRotation();
         }
-        public void Update(ref float gravity, ref float maxFallSpeed)
-        {
-            Lighting.AddLight(projectile.position, 0.9f, 0.45f, 0.45f);
-        }
+        
     }
 }

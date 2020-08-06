@@ -1,6 +1,7 @@
 using Terraria;
 using Microsoft.Xna.Framework;
 using Terraria.ID;
+using System;
 using Terraria.ModLoader;
 
 namespace PlazmaMode.Items.Weapons
@@ -31,6 +32,18 @@ namespace PlazmaMode.Items.Weapons
             item.shoot = ModContent.ProjectileType<Projectiles.PlazmaBeam>();
         }
 
+        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        {
+            float numberProjectiles = 3; // This defines how many projectiles to shot
+            float rotation = MathHelper.ToRadians(45);
+            position += Vector2.Normalize(new Vector2(speedX, speedY)) * 15f; //this defines the distance of the projectiles form the player when the projectile spawns
+            for (int i = 0; i < numberProjectiles; i++)
+            {
+                Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedBy(MathHelper.Lerp(-rotation, rotation, i / (numberProjectiles - 1))); // This defines the projectile roatation and speed. .4f == projectile speed
+                Projectile.NewProjectile(position.X - 30f, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockBack, player.whoAmI);
+            }
+            return false;
+        }
 
         public override void AddRecipes()
         {
