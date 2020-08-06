@@ -29,5 +29,9 @@ namespace PlazmaMode.Projectiles
         {
             projectile.rotation = projectile.velocity.ToRotation();
         }
+        public void Update(ref float gravity, ref float maxFallSpeed)
+        {
+            Lighting.AddLight(projectile.position, 0.9f, 0.45f, 0.45f);
+        }
     }
 }
