@@ -17,7 +17,7 @@ namespace PlazmaMode.Projectiles
             projectile.height = 20; //sprite is 20 pixels tall
             projectile.aiStyle = 0; //projectile moves in a straight line
             projectile.friendly  = true; //player projectile
-            projectile.timeLeft = 100; //lasts for 600 frames/ticks. Terraria runs at 60FPS, so it lasts 10 seconds.
+            projectile.timeLeft = 1200; //lasts for 600 frames/ticks. Terraria runs at 60FPS, so it lasts 10 seconds.
             projectile.melee = true;
         }
 
