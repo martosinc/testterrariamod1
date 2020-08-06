@@ -15,14 +15,14 @@ namespace PlazmaMode {
         }
         private void OreGeneration(GenerationProgress progress) {
             progress.Message = "Generating Modded Ores!";
-            for(int i = 0; i < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 0.0002); i++)
+            for(int i = 0; i < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 0.00008); i++)
             {
                 int x = WorldGen.genRand.Next(0, Main.maxTilesX);
                 int y = WorldGen.genRand.Next((int)WorldGen.rockLayer, Main.maxTilesY);
                 WorldGen.TileRunner(
                     x,
                     y,
-                    (double)WorldGen.genRand.Next(5, 15),
+                    (double)WorldGen.genRand.Next(5, 10),
                     WorldGen.genRand.Next(6,8),
                     mod.TileType("PlazmaOreTile"),
                     false,
